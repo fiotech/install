@@ -76,7 +76,7 @@ class Installer
                 $result = is_writable(PATH_INSTALL) && is_writable($this->logFile);
                 break;
             case 'phpVersion':
-                $result = PHP_VERSION_ID >= OCTOBER_MINIMUM_PHP_VERSION_ID;
+                $result = PHP_VERSION_ID >= FEBRUARY_MINIMUM_PHP_VERSION_ID;
                 break;
             case 'pdoLibrary':
                 $result = defined('PDO::ATTR_DRIVER_NAME');
@@ -350,7 +350,7 @@ class Installer
                         || !is_dir(PATH_INSTALL . '/vendor'))
                     throw new Exception('Could not extract application files');
 
-                $this->moveHtaccess(null, 'october');
+                $this->moveHtaccess(null, 'february');
                 $this->moveHtaccess('installer', null);
                 break;
 
@@ -389,7 +389,7 @@ class Installer
             case 'finishInstall':
                 $this->setCoreBuild();
                 $this->moveHtaccess(null, 'installer');
-                $this->moveHtaccess('october', null);
+                $this->moveHtaccess('february', null);
                 $this->cleanUp();
                 break;
         }
@@ -773,7 +773,7 @@ class Installer
     {
         $params['url'] = base64_encode($this->getBaseUrl());
         $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, OCTOBER_GATEWAY.'/'.$uri);
+        curl_setopt($curl, CURLOPT_URL, FEBRUARY_GATEWAY.'/'.$uri);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_TIMEOUT, 3600);
         // curl_setopt($curl, CURLOPT_FOLLOWLOCATION , true);
@@ -781,9 +781,9 @@ class Installer
         curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
         curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($params, '', '&'));
 
-        if (defined('OCTOBER_GATEWAY_AUTH')) {
+        if (defined('FEBRUARY_GATEWAY_AUTH')) {
             curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-            curl_setopt($curl, CURLOPT_USERPWD, OCTOBER_GATEWAY_AUTH);
+            curl_setopt($curl, CURLOPT_USERPWD, FEBRUARY_GATEWAY_AUTH);
         }
 
         return $curl;

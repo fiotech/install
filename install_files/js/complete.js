@@ -4,7 +4,7 @@
 
 Installer.Pages.installComplete.beforeUnload = function() {
     // Hide the leaves
-    $(document).octoberLeaves('stop')
+    $(document).februaryLeaves('stop')
 }
 
 Installer.Pages.installComplete.beforeShow = function() {
@@ -22,6 +22,6 @@ Installer.Pages.installComplete.beforeShow = function() {
 
 Installer.Pages.installComplete.init = function() {
     // Purrty leaves
-    $(document).octoberLeaves({ numberOfLeaves: 10, cycleSpeed: 40 })
-    $(document).octoberLeaves('start')
+    $(document).februaryLeaves({ numberOfLeaves: 10, cycleSpeed: 40 })
+    $(document).februaryLeaves('start')
 }

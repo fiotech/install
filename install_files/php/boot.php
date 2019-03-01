@@ -1,6 +1,6 @@
 <?php
 
-define('OCTOBER_MINIMUM_PHP_VERSION_ID', 70000);
+define('FEBRUARY_MINIMUM_PHP_VERSION_ID', 70000);
 
 /**
  * PHP_VERSION_ID is available as of PHP 5.2.7, if our 
@@ -15,12 +15,12 @@ if (!defined('PHP_VERSION_ID')) {
 /*
  * Check PHP version
  */
-if (PHP_VERSION_ID < OCTOBER_MINIMUM_PHP_VERSION_ID) exit('You need at least PHP 7.0 to install October CMS.');
+if (PHP_VERSION_ID < FEBRUARY_MINIMUM_PHP_VERSION_ID) exit('You need at least PHP 7.0 to install February CMS.');
 
 /*
  * Check for JSON extension
  */
-if (!function_exists('json_decode')) exit('JSON PHP Extension is required to install October CMS');
+if (!function_exists('json_decode')) exit('JSON PHP Extension is required to install February CMS');
 
 /*
  * PHP headers
@@ -49,7 +49,7 @@ else {
  * Constants
  */
 define('PATH_INSTALL', str_replace("\\", "/", realpath(dirname(__FILE__)."/../../")));
-define('OCTOBER_GATEWAY', 'http://octobercms.com/api');
+define('FEBRUARY_GATEWAY', 'http://february.fiotech.io/api');
 
 /*
  * Address timeout limits

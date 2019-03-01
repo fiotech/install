@@ -1,5 +1,5 @@
 /*!
- * October Layout
+ * February Layout
  */
 
 html,
@@ -109,10 +109,11 @@ header h1 {
     display: block;
     height: 47px;
     width: 283px;
-    background: transparent url('../images/logo.png') no-repeat left -90px;
+    /* background: transparent url('../images/logo.png') no-repeat left -90px; */
+    background: transparent url('../images/logo.png') no-repeat left;
     line-height: 0;
-    text-indent: -9999px;
-    overflow: hidden;
+    /* text-indent: -9999px; */
+    /* overflow: hidden; */
 }
 header .progress-bar-container {
     margin-top: 10px;

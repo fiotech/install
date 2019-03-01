@@ -1,5 +1,5 @@
 /*!
- * October Logic
+ * February Logic
  */
 
 $(document).ready(function(){
